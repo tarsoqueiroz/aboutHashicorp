@@ -1,7 +1,7 @@
 variable "kind_cluster_name" {
   type        = string
   description = "Super cluster vai"
-  default     = "demo-gripopos"
+  default     = "tqcluster"
 }
 
 variable "kind_cluster_config_path" {
