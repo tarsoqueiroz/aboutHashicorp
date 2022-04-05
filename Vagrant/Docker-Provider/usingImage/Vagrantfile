@@ -1,0 +1,12 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.provider "docker" do |d|
+    d.image = "hashicorp/http-echo"
+    d.ports = ["5678:5678"]
+    d.create_args = ["-d", "--rm"]
+    d.name = "hashicorp_hello"
+    d.cmd = ["-text=hashiHello"]
+  end
+end
