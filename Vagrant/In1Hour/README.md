@@ -7,6 +7,10 @@
 - [Vagrant site](https://www.vagrantup.com/)
 - [Virtual box][https://www.virtualbox.org/]
 
+```sh
+vagrant --version
+```
+
 ## Working with single VM
 
 ```sh
@@ -46,12 +50,38 @@ whoami
 exit
 
 ## Maintenace commands
+vagrant box add hashicorp/precise64
 vagrant box list
 vagrant box outdated
 vagrant box update
+vagrant box remove hashicorp/precise64
 vagrant status
 vagrant global-status
 vagrant reload
-
 ```
 
+## Working with multiple VMs
+
+```sh
+## Creating VMs
+vagrant up
+vagrant status
+vagrant ssh srv1
+## Inside SRV1
+cat /etc/centos-release
+ip -br -c a
+exit
+## On host
+vagrant ssh srv2
+cat /etc/centos-release
+ip -br -c a
+exit
+```
+
+## Ubuntu Lab
+
+> `https://github.com/vlabs8/vagrant`
+
+```sh
+
+```
