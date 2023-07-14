@@ -1,0 +1,7 @@
+{ {{ with secret  "customers/acme" }}
+   "ID":           "{{ .Data.data.customer_id }}",
+   "e-mail":       "{{ .Data.data.contact_email }}",
+   "Organization": "{{ .Data.data.organization }}",
+   "Situation":    "{{ .Data.data.status }}/{{ .Data.data.type }}",
+   "Location":     "{{ .Data.data.region }} - {{ .Data.data.zip_code }}"   
+{{ end }} }

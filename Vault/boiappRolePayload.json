@@ -1,0 +1,8 @@
+{
+  "token_ttl": "15m",
+  "token_max_ttl": "15m",
+  "token_policies": ["default", "customers-certificate"],
+  "period": 0,
+  "bind_secret_id": true,
+  "secret_id_ttl": "600m"
+}
