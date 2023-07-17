@@ -21,7 +21,7 @@ kubectl wait --namespace ingress-nginx \
   --timeout=90s
 ```
 
-## Installing and Initianing Vault
+## Installing and Initializing Vault
 
 ```sh
 
