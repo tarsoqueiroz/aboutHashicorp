@@ -1,0 +1,55 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# NETWORK_IFACE         = "enp4s0"
+# BOX_IMAGE             = "generic/alpine312"
+# BOX_PROVISION         = "alpine-provision.sh"
+# BOX_IMAGE      = "ubuntu/focal64"
+BOX_IMAGE      = "generic/ubuntu2204"
+BOX_PROVISION  = "ubuntu-provision.sh"
+
+vm_pool = {
+  "machine1" => { 
+    :ip => "192.168.58.171", :cpus => 2, :mem => 2048,
+    :syncfolder => "./sync.data/machine1"
+  },
+  "machine2" => { 
+    :ip => "192.168.58.172", :cpus => 2, :mem => 2048,
+    :syncfolder => "./sync.data/machine2"
+  },
+  "machine3" => { 
+    :ip => "192.168.58.173", :cpus => 2, :mem => 2048,
+    :syncfolder => "./sync.data/machine3"
+  }
+}
+ 
+Vagrant.configure("2") do |config|
+  
+  vm_pool.each_with_index do |(hostname, info), index|
+
+    config.vm.define hostname do |subconfig|
+      subconfig.vm.box          = BOX_IMAGE
+      subconfig.vm.hostname     = "#{hostname}"
+      subconfig.vm.synced_folder  "#{info[:syncfolder]}", 
+                                  "/Data", 
+                                  disabled: false
+      subconfig.vm.provision     :shell, 
+                                  path: "#{BOX_PROVISION}"
+      # subconfig.vm.network        "public_network", 
+      #                             bridge: "#{NETWORK_IFACE}", 
+      subconfig.vm.network        "private_network", 
+                                  ip: "#{info[:ip]}"
+      subconfig.vm.disk          :disk, 
+                                  name: "#{hostname}-dsk-a", 
+                                  size: "5GB"
+      subconfig.vm.provider       "virtualbox" do |vbox|
+        vbox.memory             = "#{info[:mem]}"
+        vbox.cpus               = "#{info[:cpus]}"
+        vbox.name               = "Cluster Pool #{hostname}"
+        vbox.gui                = false
+      end
+    end
+
+  end # end CLUSTER
+
+end
