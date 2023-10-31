@@ -392,8 +392,8 @@ resource "tls_cert_request" "csr" {
 
 ```json
 resource "local_file" "data" {
-	  filename = "/opt/codes"
-	  content = "You've to write this code."
+  filename = "/opt/codes"
+  content = "You've to write this code."
 }
 ```
 
@@ -408,7 +408,9 @@ resource "local_file" "cloud" {
   filename = "/tmp/plugins"
   content = "multiple cloud providers."
 
-}
+}	  filename = "/opt/codes"
+	  content = "You've to write this code."
+
 
 resource "aws_ebs_volume" "myvolume" {
   availability_zone = "us-east-2"
@@ -441,12 +443,215 @@ provider "aws" {
 }
 ```
 
-
 ## Lab: Lifecycle Rules
+
+- `main.tf`
+
+```json
+resource "local_file" "file" {
+  filename        = var.filename
+  file_permission = var.permission
+  // content         = random_string.string.id
+  content = "This is a random string - ${random_string.string.id}"
+  lifecycle {
+    create_before_destroy =  true
+  }
+}
+
+resource "random_string" "string" {
+  length = var.length
+  keepers = {
+    length = var.length
+  }
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+```
+
+- `variables.tf`
+
+```json
+variable "length" {
+  default = 12
+}
+variable "filename" {
+  default = "/root/random_text"
+}
+variable "content" {
+  default = "This file contains a single line of data"
+}
+variable "permission" {
+  default = 0770
+}
+```
+
+- `main.tf` v2
+
+```json
+resource "random_pet" "super_pet" {
+  length = var.length
+  prefix = var.prefix
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+```
 
 ## Lab: Datasources
 
+- `main.tf`
+
+```json
+output "os-version" {
+  value = data.local_file.os.content
+}
+data "local_file" "os" {
+  filename = "/etc/os-release"
+}
+```
+
+- `ebs.tf`
+
+```json
+data "aws_ebs_volume" "gp2_volume" {
+  most_recent = true
+
+  filter {
+    name   = "volume-type"
+    values = ["gp2"]
+  }
+}
+```
+
+- `s3.tf`
+
+```json
+data "aws_s3_bucket" "selected" {
+  // bucket_name = "bucket.test.com"
+  bucket = "bucket.test.com"
+}
+```
+
 ## Lab: Count and for each
+
+- `main.tf`
+
+```json
+resource "local_sensitive_file" "name" {
+  // filename = "/root/user-data"
+  // content  = "password: S3cr3tP@ssw0rd"
+  // count    = 3
+
+  // filename = var.users[count.index]
+  // content  = var.content
+  // count    = length(var.users)
+
+  filename = each.value
+  for_each = toset(var.users)
+  content  = var.content
+}
+```
+
+- `variables.tf`
+
+```json
+variable "users" {
+  // type = list(any)
+  type = list(string)
+  default = [ "/root/user10", "/root/user11", "/root/user12", "/root/user10"]
+}
+variable "content" {
+  default = "password: S3cr3tP@ssw0rd"
+}
+```
 
 ## Lab: Version Constraints
 
+- `main.tf` @omega
+
+```json
+terraform {
+  required_providers {
+    local = {
+      source  = "hashicorp/local"
+      version = "1.2.2"
+    }
+  }
+}
+
+resource "local_file" "innovation" {
+  filename = var.path
+  content  = var.message
+}
+```
+
+- `variables.tf` @omega
+
+```json
+variable "path" {
+  default = "/root/session"
+}
+
+variable "message" {
+  default = "It's time for innovative ideas.\n"
+}
+```
+
+- `rotation.tf` @rotate
+
+```json
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "> 3.45.0, !=3.46.0, < 3.48.0"
+    }
+  }
+}
+
+resource "google_compute_instance" "special" {
+  name         = "aone"
+  machine_type = "e2-micro"
+  zone         = "us-west1-c"
+}
+```
+
+- `nautilus.tf` @nautilus
+
+```json
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ""
+    }
+  }
+}
+
+resource "aws_ebs_volume" "soft-volume" {
+  availability_zone = "us-west-2a"
+  size              = 15
+  tags = {
+    Name = "temporary"
+  }
+}
+```
+
+- `tecton.tf` @lexicorp
+
+```json
+terraform {
+  required_providers {
+    k8s = {
+      source  = "hashicorp/kubernetes"
+      version = "> 1.12.0, != 1.13.1, < 1.13.3 "
+    }
+
+    helm = {
+      source  = "hashicorp/helm"
+      version = "~> 1.2.0"
+    }
+  }
+}
+```
