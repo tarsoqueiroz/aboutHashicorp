@@ -4,7 +4,10 @@
 
 > `https://www.youtube.com/watch?v=YcJ9IeukJL8`
 
-Access the labs here: `https://bit.ly/YT_Terraform`
+Access the labs here: 
+
+- `https://bit.ly/YT_Terraform`
+- `https://kodekloud.com/courses/lab-terraform-for-beginners/`
 
 ## Start (0:00:00)
 
@@ -18,7 +21,9 @@ Access the labs here: `https://bit.ly/YT_Terraform`
 
 ## What is Terraform? (0:14:48)
 
-## What is HCL - Hashicorp Configuration Language? (0:22:47)
+Install by downloading from `Hashicorp.io`.
+
+## What is HCL - Hashicorp Configuration Language? (0:22:47) <<<I'm here>>>
 
 ## Lab 1 - HCL Basics (0:33:00)
 
