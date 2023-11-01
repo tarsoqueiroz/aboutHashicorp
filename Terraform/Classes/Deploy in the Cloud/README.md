@@ -7,3 +7,7 @@
 Learn how to apply Infrastructure as Code (IaC) with Terraform. Covers Web Apps, Database, VM, Kubernetes and Azure.
 
 ## Section 1: Introduction
+
+
+
+## Section 2: Terraform basics
