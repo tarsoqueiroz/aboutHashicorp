@@ -63,3 +63,18 @@ What is the Terraform command to deploy infrastructure to the target system ?
 - $ terraform init
 
 ## Section 3: Input & output variables
+
+- [azurerm_app_service](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_service)
+- [03_Execution_Plan](https://github.com/HoussemDellai/terraform-course/tree/main/03_Execution_Plan)
+
+## Section 4: Terraform execution plan
+
+> `main.tf` ---> `terraform init`
+>
+> `terraform plan {-out result.tfplan}` ===> `.tfplan`
+>
+> `terraform show -json result.tfplan | jq .`
+>
+> `terraform apply result.tfplan` ===> `terraform.tfstate`
+
+## Section 5: Terraform state
