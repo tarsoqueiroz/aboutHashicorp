@@ -78,3 +78,58 @@ What is the Terraform command to deploy infrastructure to the target system ?
 > `terraform apply result.tfplan` ===> `terraform.tfstate`
 
 ## Section 5: Terraform state
+
+When `terraform apply` is under execution the `.tfstate` is locked all over the process.
+
+## Section 6: How Terraform work with plan and state
+
+> [Terraform: How TF works](./resources/Terraform_010_How+TF+works.pdf)
+
+## Section 7: Terraform Workspace
+
+> `https://github.com/HoussemDellai/terraform-course/tree/main/05_Web_Sql_database`
+
+```sh
+$ terraform workspace add dev
+$ terraform workspace add prod
+$ terraform workspace add test
+
+$ terraform workspace list
+  default
+  dev
+* prod
+  test
+
+$ terraform workspace select dev
+  Switched to workspace "dev"
+
+$ terraform workspace list
+  default
+* dev
+  prod
+  test
+
+$ terraform plan -out .\dev\dev.tfplan  \
+                 -state .\dev\dev.state \
+                 -var-file .\dev\dev.tfvars
+
+$ terraform plan -out .\test\test.tfplan  \
+                 -state .\test\test.state \
+                 -var-file .\test\test.tfvars
+```
+
+## Section 8: Deploy container services
+
+## Section 9: Deploying Azure Container Apps
+
+## Section 10: Deploying PaaS services
+
+## Section 11: Deploying IaaS services
+
+## Section 12: Deploying Logics Apps
+
+## Section 13: Deploying ARM templates
+
+> [Terraform: Azure ARM templates](./resources/Terraform_004_Azure+ARM+templates.pdf)
+
+## Section 14: Cloud Governance using Terraform
