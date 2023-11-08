@@ -133,3 +133,49 @@ $ terraform plan -out .\test\test.tfplan  \
 > [Terraform: Azure ARM templates](./resources/Terraform_004_Azure+ARM+templates.pdf)
 
 ## Section 14: Cloud Governance using Terraform
+
+## Section 15: Terraform modules
+
+- `main.tf`
+- `variables.tf`
+- `providers.tf`
+- `outputs.tf`
+
+> [Terraform: Modules dependency](./resources/Terraform+modules+dependency.pdf)
+>
+> `https://github.com/HoussemDellai/terraform-course/tree/main/130_module_dependencies`
+
+More resources for modules:
+
+- [Terraform registry](https://registry.terraform.io/)
+- [Azure modules](https://registry.terraform.io/namespaces/Azure)
+- [Azure VNET module](https://registry.terraform.io/modules/Azure/vnet/azurerm/latest)
+- [Azure VNET module source code](https://github.com/Azure/terraform-azurerm-vnet)
+- [Azure compute module](https://registry.terraform.io/modules/Azure/compute/azurerm/latest)
+
+## Section 16: Deploying to multiple targets using multi-provider
+
+> [Terraform: Multi-provider](./resources/Terraform_017_Multi-provider.pdf)
+
+- `https://github.com/HoussemDellai/terraform-course/tree/main/25_multi_provider`
+
+## Section 17: Import existing infrastructure into Terraform
+
+- `https://github.com/HoussemDellai/terraform-course/tree/main/90_import_resource`
+- `https://github.com/HoussemDellai/terraform-course/tree/main/91_import_terrafy`
+- `https://github.com/HoussemDellai/terraform-course/tree/main/92_import_terraformer`
+- `https://github.com/HoussemDellai/terraform-course/tree/main/93_import_terraform`
+
+More tools to import resources
+
+- [Terrafy](https://github.com/Azure/aztfy)
+- [Terraformer](https://github.com/GoogleCloudPlatform/terraformer)
+- [Terraforming](https://github.com/dtan4/terraforming)
+
+## Section 18: Terraform features
+
+- `https://github.com/HoussemDellai/terraform-course/tree/main/21_data_sources`
+
+> [Terraform: Count vs For Each](./resources/Terraform_011_Count+vs+For_Each.pdf)
+
+## Section 19: Deploy to Kubernetes using Terraform provider
