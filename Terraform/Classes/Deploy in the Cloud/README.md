@@ -179,3 +179,38 @@ More tools to import resources
 > [Terraform: Count vs For Each](./resources/Terraform_011_Count+vs+For_Each.pdf)
 
 ## Section 19: Deploy to Kubernetes using Terraform provider
+
+## Section 20: Deploy Helm Charts to Kubernetes using Terraform provider
+
+## Section 21: Resource visualization with Rover
+
+- `https://github.com/HoussemDellai/terraform-course/tree/main/24_rover_graph`
+
+## Section 22: Service Principal for securing Terraform deployments
+
+## Section 23: Automated testing using Terratest
+
+- `https://github.com/HoussemDellai/terraform-course/tree/main/41_tf_terratest`
+- `https://github.com/HoussemDellai/terraform-course/tree/main/42_terratest_rg`
+- `https://github.com/HoussemDellai/terraform-course/tree/main/43_terratest_aks`
+
+## Section 24: Detecting misconfigurations in Terraform
+
+- `https://github.com/HoussemDellai/terraform-course/tree/main/60_scan_checkov`
+
+## Section 25: Multi-layer architecture
+
+> [Terraform: multi-layer](./resources/Terraform_012_TF+multi-layer.pdf)
+
+## Section 26: AzApi provider to extend support for resources in Terraform
+
+- `https://github.com/HoussemDellai/terraform-course/tree/main/120_azapi_provider`
+- `https://github.com/HoussemDellai/terraform-course/tree/main/121_appservice_domain`
+
+## Section 27: Azure DevOps provider for Terraform
+
+- [Azure DevOps Provider](./resources/Azure+DevOps+provider.pdf)
+
+## Section 28: Container Apps Landing Zone implementation
+
+## Section 29: DevOps for Terraform
