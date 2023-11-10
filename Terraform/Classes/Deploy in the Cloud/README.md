@@ -214,3 +214,15 @@ More tools to import resources
 ## Section 28: Container Apps Landing Zone implementation
 
 ## Section 29: DevOps for Terraform
+
+## Section 30: Migration deprecated resources
+
+## Section 31: Resources
+
+Azure Cloud Application Framework (CAF): This is a very nice implementation for CAF on Azure using Terraform.
+
+- [Azure/caf-terraform-landingzones: Cloud Adoption Framework for Azure - Terraform landing zones (github.com)](https://github.com/Azure/caf-terraform-landingzones)
+
+## That's all Folks
+
+Seeya!!!
