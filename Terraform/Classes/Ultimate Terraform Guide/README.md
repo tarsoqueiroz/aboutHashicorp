@@ -47,7 +47,30 @@ Para quem é este curso:
 - System Administrator
 - IT Engineers
 
-## Teaser Video
+## Section 1: Teaser Video
 
-## Introduction
+## Section 2: Introduction
 
+Install Terraform:
+
+- `https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli`
+- [First resource: main.tf](./resources/tf/first/main.tf)
+
+## Section 2: Learn Terraform from the scratch
+
+Steps:
+
+- IAM user creation
+- User secret credentials
+
+Main commands:
+
+```sh
+terraform init # Initialization
+
+terraform plan # Planning
+
+terraform apply # Applying
+
+terraform destroy # Destroying
+```
