@@ -47,4 +47,7 @@ Para quem é este curso:
 - System Administrator
 - IT Engineers
 
-## 
+## Teaser Video
+
+## Introduction
+
