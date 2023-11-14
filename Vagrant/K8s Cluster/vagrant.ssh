@@ -1,0 +1,65 @@
+Host master-1
+  HostName 127.0.0.1
+  User vagrant
+  Port 2222
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile "/home/tarso/Data/Learn/aboutHashicorp/Vagrant/K8s Cluster/.vagrant/machines/master-1/virtualbox/private_key"
+  IdentitiesOnly yes
+  LogLevel FATAL
+  PubkeyAcceptedKeyTypes +ssh-rsa
+  HostKeyAlgorithms +ssh-rsa
+
+Host master-2
+  HostName 127.0.0.1
+  User vagrant
+  Port 2200
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile "/home/tarso/Data/Learn/aboutHashicorp/Vagrant/K8s Cluster/.vagrant/machines/master-2/virtualbox/private_key"
+  IdentitiesOnly yes
+  LogLevel FATAL
+  PubkeyAcceptedKeyTypes +ssh-rsa
+  HostKeyAlgorithms +ssh-rsa
+
+Host loadbalancer
+  HostName 10.15.18.44
+  User vagrant
+  Port 2730
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile ".vagrant/machines/loadbalancer/virtualbox/private_key"
+  IdentitiesOnly yes
+  LogLevel FATAL
+  PubkeyAcceptedKeyTypes +ssh-rsa
+  HostKeyAlgorithms +ssh-rsa
+
+Host worker-1
+  HostName 127.0.0.1
+  User vagrant
+  Port 2202
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile "/home/tarso/Data/Learn/aboutHashicorp/Vagrant/K8s Cluster/.vagrant/machines/worker-1/virtualbox/private_key"
+  IdentitiesOnly yes
+  LogLevel FATAL
+  PubkeyAcceptedKeyTypes +ssh-rsa
+  HostKeyAlgorithms +ssh-rsa
+
+Host worker-2
+  HostName 127.0.0.1
+  User vagrant
+  Port 2203
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile "/home/tarso/Data/Learn/aboutHashicorp/Vagrant/K8s Cluster/.vagrant/machines/worker-2/virtualbox/private_key"
+  IdentitiesOnly yes
+  LogLevel FATAL
+  PubkeyAcceptedKeyTypes +ssh-rsa
+  HostKeyAlgorithms +ssh-rsa
+
