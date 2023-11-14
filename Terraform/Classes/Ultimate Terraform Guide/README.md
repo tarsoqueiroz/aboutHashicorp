@@ -74,3 +74,5 @@ terraform apply # Applying
 
 terraform destroy # Destroying
 ```
+
+- [`main.tf`](./resources/tf/variables/main.tf)
