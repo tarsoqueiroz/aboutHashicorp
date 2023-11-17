@@ -17,6 +17,7 @@ Vagrant.configure("2") do |config|
         end
         machine.vm.network  "private_network", 
                             ip: "#{settings['network']['network_lan']}#{node['ipstart']+i}"
+        puts "ip: #{settings['network']['network_lan']}#{node['ipstart']+i}"
       end
     end
   end
