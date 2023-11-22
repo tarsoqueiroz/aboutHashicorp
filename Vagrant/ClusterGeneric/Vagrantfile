@@ -15,10 +15,10 @@ Vagrant.configure("2") do |config|
           vbox.memory = node['memory']
           vbox.cpus   = node['cpu']
         end
-        machine.vm.network  "private_network", 
-                            ip: "#{settings['network']['network_lan']}#{node['ipstart']+i}"
-        puts "ip: #{settings['network']['network_lan']}#{node['ipstart']+i}"
       end
+      config.vm.network  "private_network", 
+                          ip: "#{settings['network']['network_lan']}#{node['ipstart']+i}"
+      puts "ip: #{settings['network']['network_lan']}#{node['ipstart']+i}"
     end
   end
 end

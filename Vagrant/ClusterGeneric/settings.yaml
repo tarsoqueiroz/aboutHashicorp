@@ -25,12 +25,12 @@ nodes:
     memory: 1048
     ipstart: 10
   - hostname: control
-    qty: 1
+    qty: 2
     cpu: 2
     memory: 2096
     ipstart: 20
   - hostname: workers
-    qty: 2
+    qty: 3
     cpu: 2
     memory: 2096
     ipstart: 30
