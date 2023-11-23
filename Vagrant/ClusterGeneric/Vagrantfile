@@ -9,15 +9,15 @@ NODE_NUMBERS = 2
 Vagrant.configure("2") do |config|
   settings['nodes'].each do |node|
     for i in (0..(node['qty']-1))
-      config.vm.define "#{node['hostname']}#{i}" do |machine|
-        machine.vm.box      = settings['software']['box']
-        machine.vm.provider "virtualbox" do |vbox|
+      config.vm.define "#{node['hostname']}#{i}" do |virbox|
+        virbox.vm.box = settings['software']['box']
+        virbox.vm.provider "virtualbox" do |vbox|
           vbox.memory = node['memory']
           vbox.cpus   = node['cpu']
         end
       end
-      config.vm.network  "private_network", 
-                          ip: "#{settings['network']['network_lan']}#{node['ipstart']+i}"
+      config.vm.network "private_network", 
+                        ip: "#{settings['network']['network_lan']}#{node['ipstart']+i}"
       puts "ip: #{settings['network']['network_lan']}#{node['ipstart']+i}"
     end
   end
