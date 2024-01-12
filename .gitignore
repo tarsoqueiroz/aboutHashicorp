@@ -5,6 +5,7 @@
 *.data
 *.github
 *.git
+.env
 
 # Binaries for programs and plugins
 *.exe
