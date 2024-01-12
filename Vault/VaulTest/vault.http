@@ -1,0 +1,20 @@
+### Variables
+@vaultAddress = {{$dotenv VAULT_ADDRESS}}
+@rootToken = {{$dotenv ROOT_TOKEN}}
+@unsealToken = {{$dotenv UNSEAL_KEY}}
+
+### GET sys health
+GET {{vaultAddress}}/v1/sys/health
+Accept: */*
+X-Vault-Token: {{rootToken}}
+
+### GET sys mounts
+GET {{vaultAddress}}/v1/sys/mounts
+X-Vault-Request: true
+X-Vault-Token: {{rootToken}}
+
+### GET sys mounts
+GET {{vaultAddress}}/v1/sys/mounts
+X-Vault-Request: true
+X-Vault-Token: {{rootToken}}
+

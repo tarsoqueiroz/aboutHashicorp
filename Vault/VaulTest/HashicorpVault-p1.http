@@ -1,0 +1,58 @@
+### Variables
+@vaultAddress = {{$dotenv VAULT_ADDRESS}}
+@rootToken = {{$dotenv ROOT_TOKEN}}
+@unsealToken = {{$dotenv UNSEAL_KEY}}
+
+### Get system health
+GET {{vaultAddress}}/v1/sys/health
+Accept: */*
+X-Vault-Token: {{rootToken}}
+
+### sys mounts
+GET {{vaultAddress}}/v1/sys/mounts
+X-Vault-Request: true
+X-Vault-Token: {{rootToken}}
+
+### sys auth
+GET {{vaultAddress}}/v1/sys/auth
+Accept: */*
+X-Vault-Token: {{rootToken}}
+
+### Info about the host instance
+GET {{vaultAddress}}/v1/sys/host-info
+Accept: application/json
+X-Vault-Token: {{rootToken}}
+
+### Return init status
+GET {{vaultAddress}}/v1/sys/init
+Accept: */*
+X-Vault-Token: {{rootToken}}
+
+### Check seal status
+GET {{vaultAddress}}/v1/sys/seal-status
+Accept: application/json
+X-Vault-Token: {{rootToken}}
+
+### Login using userpass
+# @prompt userName Input user name:
+# @prompt passWord Inform the password:
+
+POST {{vaultAddress}}/v1/auth/userpass/login/{{userName}}
+Accept: */*
+Content-Type: application/json
+
+{
+  "password": "{{passWord}}"
+}
+
+### GET 
+GET {{vaultAddress}}
+
+### GET 
+GET {{vaultAddress}}
+
+### GET 
+GET {{vaultAddress}}
+
+### GET 
+GET {{vaultAddress}}
